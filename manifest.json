@@ -1,0 +1,15 @@
+{
+  "name": "Botadex Expert 100%",
+  "short_name": "Botadex Expert",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f6fbf4",
+  "theme_color": "#1f5b3c",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
