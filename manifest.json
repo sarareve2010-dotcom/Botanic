@@ -1,1 +1,15 @@
-{"name":"Botadex Expert","short_name":"Botadex","start_url":"./index.html","display":"standalone","background_color":"#f6faf6","theme_color":"#1f5b3c"}
+{
+  "name": "Botadex Expert Pro",
+  "short_name": "Botadex",
+  "description": "Application de formation botanique, habitats EUNIS, phytosociologie et terrain.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6faf6",
+  "theme_color": "#1f5b3c",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {"src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
