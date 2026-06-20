@@ -1,5 +1,5 @@
-const CACHE_NAME='botadex-v1';
-const ASSETS=['./','./index.html','./style.css','./manifest.json','./data.js','./expert.js','./pro-data.js','./app.js','./audit-ui.js','./pro-ui.js','./learn-plus.js','./plant-pro.js','./crosslinks.js','./icon.svg'];
+const CACHE_NAME='botadex-v4-clean-plants';
+const ASSETS=['./','./index.html','./style.css','./manifest.json','./data.js','./expert.js','./pro-data.js','./app.js','./audit-ui.js','./pro-ui.js','./learn-plus.js','./plant-pro.js','./plant-bugfix.js','./common-plants.js','./dedupe-plants.js','./home-fix.js','./crosslinks.js','./install-app.js','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));return response}).catch(()=>caches.match('./index.html'))))});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));return response}).catch(()=>caches.match(event.request).then(cached=>cached||caches.match('./index.html'))))});
